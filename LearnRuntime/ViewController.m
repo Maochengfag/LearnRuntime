@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "TableViewController.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [NSThread sleepForTimeInterval:3];
+    
+    TableViewController *tvc = [[TableViewController alloc] init];
+    [self.navigationController    pushViewController:tvc animated:YES];
 }
 
 
@@ -25,5 +37,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)clickToNextPage:(id)sender {
+    
+    
+}
 
 @end
